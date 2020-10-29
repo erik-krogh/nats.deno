@@ -8,13 +8,13 @@ import {
   StringCodec,
 } from "../src/mod.ts";
 import { NatsServer } from "./helpers/launcher.ts";
-import { Lock, assertErrorCode } from "./helpers/mod.ts";
+import { assertErrorCode, Lock } from "./helpers/mod.ts";
 import {
-  assertEquals,
-  assertArrayContains,
   assert,
+  assertArrayIncludes,
+  assertEquals,
   fail,
-} from "https://deno.land/std@0.71.0/testing/asserts.ts";
+} from "https://deno.land/std@0.75.0/testing/asserts.ts";
 
 Deno.test("headers - option", async () => {
   const srv = await NatsServer.start();
@@ -41,7 +41,7 @@ Deno.test("headers - option", async () => {
         assert(k);
         assert(v);
         const vv = h.values(k);
-        assertArrayContains(v, vv);
+        assertArrayIncludes(v, vv);
       }
       lock.unlock();
     }

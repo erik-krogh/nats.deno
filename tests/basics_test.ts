@@ -16,13 +16,13 @@ import {
   assert,
   assertEquals,
   fail,
-} from "https://deno.land/std@0.71.0/testing/asserts.ts";
+} from "https://deno.land/std@0.75.0/testing/asserts.ts";
 import {
   connect,
-  Msg,
-  ErrorCode,
   createInbox,
   Empty,
+  ErrorCode,
+  Msg,
   StringCodec,
 } from "../src/mod.ts";
 import {

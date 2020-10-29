@@ -9,11 +9,11 @@ import {
   StringCodec,
 } from "../nats-base-client/internal_mod.ts";
 import {
+  assertArrayIncludes,
   assertEquals,
-  assertArrayContains,
-} from "https://deno.land/std@0.71.0/testing/asserts.ts";
+} from "https://deno.land/std@0.75.0/testing/asserts.ts";
 import { extend } from "../nats-base-client/util.ts";
-import { join, resolve } from "https://deno.land/std@0.71.0/path/mod.ts";
+import { join, resolve } from "https://deno.land/std@0.75.0/path/mod.ts";
 
 async function runDoubleSubsTest(tls: boolean) {
   const cwd = Deno.cwd();
@@ -105,7 +105,7 @@ async function runDoubleSubsTest(tls: boolean) {
   });
 
   assertEquals(count, 3);
-  assertArrayContains(subs, ["foo", "bar", "baz"]);
+  assertArrayIncludes(subs, ["foo", "bar", "baz"]);
 }
 
 Deno.test("doublesubs - standard", async () => {

@@ -14,9 +14,7 @@
  *
  */
 import { Servers } from "../nats-base-client/servers.ts";
-import {
-  assertEquals,
-} from "https://deno.land/std@0.71.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.75.0/testing/asserts.ts";
 import type { ServerInfo } from "../nats-base-client/internal_mod.ts";
 import { setUrlParseFn } from "../nats-base-client/internal_mod.ts";
 
